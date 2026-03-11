@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez MRLIW pour vos projets d'automatisation et d'industrialisation logicielle.">
+    <title>Contact - MRLIW</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="accueil.html" class="logo-link" aria-label="Accueil MRLIW">
+                <img src="../img/logo_mrliw.png" alt="MRLIW Logo" class="logo-img">
+            </a>
+
+            <nav class="nav-links">
+                <a href="accueil.html#accueil" class="nav-item">ACCUEIL</a>
+                <a href="accueil.html#poles" class="nav-item">AUTOMATISATION</a>
+                <a href="accueil.html#poles" class="nav-item">INDUSTRIALISATION</a>
+                <a href="contact.html" class="nav-item active">CONTACT</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="mobile-menu-btn" aria-label="Menu principal">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="contact-page">
+        <div class="container">
+            <div class="contact-card">
+                <h1 class="contact-title">CONTACTEZ-NOUS</h1>
+                <p class="contact-subtitle">Prêt à transformer vos processus industriels ? Parlez-nous de votre projet.</p>
+                
+                <form action="https://formspree.io/f/contact@mrliw.fr" method="POST" class="contact-form">
+                    
+                    <div class="form-group-half">
+                        <div class="form-group">
+                            <label for="prenom" class="form-label">Prénom</label>
+                            <input type="text" id="prenom" name="prenom" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nom" class="form-label">Nom</label>
+                            <input type="text" id="nom" name="nom" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group-half">
+                        <div class="form-group">
+                            <label for="entreprise" class="form-label">Entreprise <span class="optional">(Optionnel)</span></label>
+                            <input type="text" id="entreprise" name="entreprise" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="poste" class="form-label">Poste occupé <span class="optional">(Optionnel)</span></label>
+                            <input type="text" id="poste" name="poste" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-group-half">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone" class="form-label">Téléphone <span class="optional">(Optionnel)</span></label>
+                            <input type="tel" id="telephone" name="telephone" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sujet" class="form-label">Sujet</label>
+                        <input type="text" id="sujet" name="sujet" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" required></textarea>
+                    </div>
+
+                    <div class="submit-btn-wrapper">
+                        <button type="submit" class="btn btn-gradient gap-2">
+                            ENVOYER LE MESSAGE
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="../img/logo_mrliw.png" alt="MRLIW Logo" class="logo-img-small">
+            </div>
+
+            <div class="footer-copyright">
+                <p><a href="infos_legales.html" class="legal-link">Informations Légales</a></p>
+                <p>&copy; MRLIW - Industrial Software & Automation</p>
+            </div>
+
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <span>+30 902 735 530</span>
+                    <span class="icon">📞</span>
+                </div>
+                <div class="contact-item">
+                    <span>contact@mrliw.com</span>
+                    <span class="icon">🌐</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
