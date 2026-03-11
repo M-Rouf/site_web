@@ -15,6 +15,10 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Umami Analytics -->
+    <script defer src="https://stats.mrliw.fr/script.js"
+        data-website-id="c07e1c42-2e2d-43bd-b1d2-3c88c7990dd4"></script>
 </head>
 
 <body>
@@ -27,10 +31,12 @@
             </a>
 
             <nav class="nav-links">
-                <a href="../index.html#accueil" class="nav-item">ACCUEIL</a>
-                <a href="../index.html#poles" class="nav-item">AUTOMATISATION</a>
-                <a href="../index.html#poles" class="nav-item">INDUSTRIALISATION</a>
-                <a href="contact.html" class="nav-item active">CONTACT</a>
+                <a href="../index.html#accueil" class="nav-item" data-umami-event="Clic Navbar Accueil">ACCUEIL</a>
+                <a href="../index.html#poles" class="nav-item"
+                    data-umami-event="Clic Navbar Automatisation">AUTOMATISATION</a>
+                <a href="../index.html#poles" class="nav-item"
+                    data-umami-event="Clic Navbar Industrialisation">INDUSTRIALISATION</a>
+                <a href="contact.html" class="nav-item active" data-umami-event="Clic Navbar Contact">CONTACT</a>
             </nav>
 
             <!-- Mobile Menu Button -->
@@ -99,7 +105,8 @@
                     </div>
 
                     <div class="submit-btn-wrapper">
-                        <button type="submit" class="btn btn-gradient gap-2">
+                        <button type="submit" class="btn btn-gradient gap-2"
+                            data-umami-event="Soumission Formulaire Contact">
                             ENVOYER LE MESSAGE
                         </button>
                     </div>

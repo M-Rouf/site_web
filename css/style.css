@@ -574,7 +574,8 @@ body {
     margin-left: 0.5rem;
 }
 
-.form-input, .form-textarea {
+.form-input,
+.form-textarea {
     width: 100%;
     background-color: rgba(12, 21, 28, 0.6);
     border: 1px solid rgba(64, 196, 255, 0.2);
@@ -586,7 +587,8 @@ body {
     transition: all var(--transition-speed) ease;
 }
 
-.form-input:focus, .form-textarea:focus {
+.form-input:focus,
+.form-textarea:focus {
     outline: none;
     border-color: var(--cyan);
     box-shadow: 0 0 10px rgba(64, 196, 255, 0.2);
