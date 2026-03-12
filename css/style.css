@@ -254,7 +254,8 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Make the last card span 2 columns to center it for 5 cards */
+    /* Make the last card span 2 columns to center it for 3 or 5 cards */
+    .services-grid .service-card:nth-child(3):last-child,
     .services-grid .service-card:nth-child(5):last-child {
         grid-column: 1 / -1;
         max-width: 50%;
@@ -263,12 +264,16 @@ body {
 }
 
 @media (max-width: 1024px) {
+
+    .services-grid .service-card:nth-child(3):last-child,
     .services-grid .service-card:nth-child(5):last-child {
         max-width: 80%;
     }
 }
 
 @media (max-width: 767px) {
+
+    .services-grid .service-card:nth-child(3):last-child,
     .services-grid .service-card:nth-child(5):last-child {
         max-width: 100%;
     }
