@@ -20,3 +20,39 @@ navItems.forEach(item => {
         }
     });
 });
+
+// Gestion de l'envoi du formulaire de contact via AJAX pour forcer la redirection
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function (event) {
+        event.preventDefault(); // Empêcher l'envoi standard (qui affiche la page Formspree)
+
+        const data = new FormData(event.target);
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true; // Empêcher les doubles clics
+        if (submitBtn) submitBtn.textContent = 'Envoi en cours...';
+
+        try {
+            const response = await fetch(event.target.action, {
+                method: contactForm.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Succès : On redirige en Javascript vers l'accueil (ou l'URL voulue)
+                window.location.href = "https://mrliw.fr/";
+            } else {
+                alert("Oops! Un problème est survenu lors de l'envoi du message.");
+                if (submitBtn) submitBtn.disabled = false;
+                if (submitBtn) submitBtn.textContent = 'ENVOYER LE MESSAGE';
+            }
+        } catch (error) {
+            alert("Oops! Impossible d'envoyer le message.");
+            if (submitBtn) submitBtn.disabled = false;
+            if (submitBtn) submitBtn.textContent = 'ENVOYER LE MESSAGE';
+        }
+    });
+}
