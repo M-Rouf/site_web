@@ -21,15 +21,14 @@ navItems.forEach(item => {
     });
 });
 
-// Gestion de l'envoi du formulaire de contact vers n8n
+// Gestion de l'envoi du formulaire de contact via le Proxy Traefik
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', async function (event) {
-        event.preventDefault(); // Empêche le rechargement standard de la page
+        event.preventDefault();
 
         const formData = new FormData(event.target);
 
-        // Construction de l'objet JSON attendu par le webhook n8n
         const data = {
             "prenom": formData.get("prenom") || "",
             "nom": formData.get("nom") || "",
@@ -48,7 +47,8 @@ if (contactForm) {
         }
 
         try {
-            const response = await fetch(event.target.action, {
+            // MODIFICATION ICI : On appelle la route locale au lieu de l'URL n8n directe
+            const response = await fetch('/api/v1/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -58,17 +58,16 @@ if (contactForm) {
             });
 
             if (response.ok) {
-                // Redirection vers l'accueil après succès complet
                 window.location.href = "https://mrliw.fr/";
             } else {
-                alert("Oops! le serveur a retourné une erreur. Veuillez réessayer.");
+                alert("Oops! Le serveur a retourné une erreur. Veuillez réessayer.");
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'ENVOYER LE MESSAGE';
                 }
             }
         } catch (error) {
-            console.error('Erreur Fetch N8N :', error);
+            console.error('Erreur Proxy Contact :', error);
             alert("Oops! Impossible de joindre le serveur. Votre message n'a pas pu être envoyé.");
             if (submitBtn) {
                 submitBtn.disabled = false;
